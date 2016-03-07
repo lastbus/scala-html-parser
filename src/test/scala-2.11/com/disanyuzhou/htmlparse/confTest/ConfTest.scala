@@ -1,6 +1,6 @@
 package com.disanyuzhou.htmlparse.confTest
 
-import com.disanyuzhou.htmlparse.com.disanyuzhou.htmlparse.conf.Conf
+import com.disanyuzhou.htmlparse.conf.Conf
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.Matcher
 

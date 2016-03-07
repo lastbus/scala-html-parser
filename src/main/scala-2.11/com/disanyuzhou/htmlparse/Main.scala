@@ -2,7 +2,7 @@ package com.disanyuzhou.htmlparse
 
 import java.net.{HttpURLConnection, URL}
 
-import _root_.com.disanyuzhou.htmlparse.com.disanyuzhou.htmlparse.conf.Conf
+import _root_.com.disanyuzhou.htmlparse.conf.Conf
 
 import scala.collection.mutable.ArrayBuffer
 
@@ -15,21 +15,19 @@ object Main {
 
 
     val url = "http://www.cfi.net.cn/"
-    val items = JsoupParse.parse(getWebBytes(url), "utf-8")
-    for (item <- items) println(item.toString)
+//    val items = JsoupParse.parse(getWebBytes(url), "utf-8")
+//    for (item <- items) println(item.toString)
 
     val absPath = this.getClass.getResource(".").getPath
     val conf = Conf.loadConf(s"${absPath}urls.xml")
     val parseConf = conf.getOrElse(url, null)
+
     if(parseConf == null) throw new Exception(s"cannot parse website $url.")
-    ParserTest.parse(getWebBytes(url), parseConf)
+
+    ParserTest.parse(getWebBytes(url), (url, parseConf._1, parseConf._2))
 
 
   }
-
-
-
-
 
 
 
