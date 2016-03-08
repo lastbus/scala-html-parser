@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <websites>
     <url value="http://www.cfi.net.cn/" encoding="UTF-8">
-        <query type="jsoup" count="10-30">
+        <query type="jsoup" count="0-30000">
             <value>#pagecontent table.ln_fy a</value>
             <map-to-class>com.disanyuzhou.htmlparse.NewItem</map-to-class>
             <extract type="text" field="text">true</extract>
